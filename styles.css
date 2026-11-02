@@ -34,3 +34,77 @@
   font-size: 14px;
   margin: 0;
 }
+/* OMOR AI Premium Authentication UI */
+
+.auth-card {
+  background: linear-gradient(145deg, #151f38, #10172a);
+  border: 1px solid #536a9a66;
+  border-radius: 22px;
+  padding: 22px;
+  box-shadow: 0 15px 45px #0005,
+              0 0 25px #638aff15;
+}
+
+.auth-tabs {
+  background: #0b1325;
+  padding: 5px;
+  border-radius: 13px;
+  gap: 5px;
+}
+
+.auth-tab {
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  transition: .25s;
+}
+
+.auth-tab.active {
+  background: linear-gradient(110deg, #9876ff, #5e86ff);
+  color: white;
+  box-shadow: 0 5px 18px #755cff55;
+}
+
+.auth-card label {
+  color: #dce5ff;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.auth-card input {
+  background: #0b1222;
+  border: 1px solid #34415f;
+  border-radius: 13px;
+  padding: 15px;
+  color: white;
+  transition: .25s;
+}
+
+.auth-card input:focus {
+  border-color: #7d8fff;
+  box-shadow: 0 0 0 3px #718cff20;
+}
+
+.auth-card .primary-btn {
+  width: 100%;
+  padding: 15px;
+  border-radius: 13px;
+  background: linear-gradient(110deg, #a078ff, #578cff);
+  color: white;
+  font-size: 14px;
+  font-weight: 800;
+  box-shadow: 0 8px 22px #745cff40;
+}
+
+.google-btn {
+  border-radius: 13px;
+  padding: 14px;
+  font-size: 13px;
+  transition: .2s;
+}
+
+.google-btn:active,
+.primary-btn:active {
+  transform: scale(.98);
+}
