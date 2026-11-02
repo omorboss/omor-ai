@@ -108,3 +108,191 @@
 .primary-btn:active {
   transform: scale(.98);
 }
+/* OMOR AI FULL PREMIUM LOGIN SCREEN */
+.auth-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  min-height: 100vh;
+  overflow-y: auto;
+  padding: 35px 22px;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 15% 15%, #49318b55, transparent 45%),
+    radial-gradient(ellipse at 90% 80%, #006baf44, transparent 45%),
+    linear-gradient(145deg, #070b19, #101a32 55%, #080d1d);
+}
+
+.auth-screen.hidden {
+  display: none !important;
+}
+
+.login-brand {
+  margin: 15px auto 28px;
+  text-align: center;
+}
+
+.login-brand img {
+  width: 105px;
+  height: 105px;
+  object-fit: contain;
+  border-radius: 50%;
+  padding: 10px;
+  background: #ffffff0b;
+  border: 1px solid #6f8dff66;
+  box-shadow: 0 0 35px #5c6cff55;
+}
+
+.login-brand h1 {
+  margin: 17px 0 7px;
+  color: white;
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.login-brand h1 span {
+  color: #38caff;
+}
+
+.login-brand p {
+  color: #aab9d6;
+  font-size: 13px;
+}
+
+.glow-line {
+  width: 65px;
+  height: 3px;
+  margin: 18px auto;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #9c70ff, #35caff);
+  box-shadow: 0 0 15px #5c8dff;
+}
+
+.auth-card {
+  max-width: 430px;
+  margin: 25px auto;
+  padding: 25px 21px;
+  text-align: left;
+  border: 1px solid #829cff44;
+  border-radius: 24px;
+  background: linear-gradient(145deg, #1b2742dd, #10182bdd);
+  box-shadow: 0 20px 55px #0008;
+  backdrop-filter: blur(18px);
+}
+
+.auth-card h2 {
+  color: white;
+  font-size: 23px;
+  margin: 0 0 7px;
+}
+
+.login-subtitle {
+  color: #9eacc7;
+  font-size: 12px;
+  margin-bottom: 22px;
+}
+
+.auth-tabs {
+  display: flex;
+  gap: 7px;
+  padding: 5px;
+  border-radius: 13px;
+  background: #080f20;
+}
+
+.auth-tab {
+  flex: 1;
+  padding: 12px;
+  border: 0;
+  border-radius: 10px;
+  color: #aab8d2;
+  background: transparent;
+  font-weight: 700;
+}
+
+.auth-tab.active {
+  color: white;
+  background: linear-gradient(110deg, #9365ff, #428cff);
+  box-shadow: 0 5px 20px #755cff55;
+}
+
+.auth-card label {
+  display: block;
+  margin: 17px 0 8px;
+  color: #e1eaff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.auth-card input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid #435579;
+  outline: none;
+  color: white;
+  background: #080f20;
+}
+
+.auth-card input:focus {
+  border-color: #55baff;
+  box-shadow: 0 0 0 3px #55baff22;
+}
+
+.auth-card .primary-btn {
+  width: 100%;
+  margin-top: 22px;
+  padding: 15px;
+  border: 0;
+  border-radius: 13px;
+  color: white;
+  font-weight: 800;
+  background: linear-gradient(110deg, #9568ff, #368fff);
+  box-shadow: 0 8px 25px #655cff55;
+}
+
+.google-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 13px;
+  border: 1px solid #536382;
+  color: white;
+  background: #ffffff0b;
+}
+
+.google-btn b {
+  margin-right: 10px;
+  color: #48a4ff;
+}
+
+.auth-screen > .text-btn {
+  color: #67cfff;
+  margin: 5px auto;
+}
+
+.login-footer {
+  color: #8494b1;
+  font-size: 11px;
+  margin-top: 25px;
+}
+
+.login-footer b {
+  color: #ffffff;
+}
+
+@media (max-width: 380px) {
+  .auth-screen {
+    padding: 25px 15px;
+  }
+
+  .login-brand img {
+    width: 85px;
+    height: 85px;
+  }
+
+  .auth-card {
+    padding: 19px 16px;
+  }
+}
