@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#090d1b">
+  <title>OMOR AI</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <section id="authScreen" class="auth-screen hidden">
+      <div class="brand-mark">✦</div>
+      <p class="eyebrow">YOUR PERSONAL AI ASSISTANT</p>
+      <h1>Welcome to <span>OMOR AI</span></h1>
+      <p class="muted">One place for ideas, answers and creativity.</p>
+      <div class="auth-card">
+        <div class="auth-tabs">
+          <button class="auth-tab active" data-auth="login">Login</button>
+          <button class="auth-tab" data-auth="signup">Create account</button>
+        </div>
+        <form id="authForm">
+          <label for="email">Email address</label>
+          <input id="email" type="email" placeholder="you@example.com" required>
+          <label for="password">Password</label>
+          <input id="password" type="password" placeholder="At least 8 characters" minlength="8" required>
+          <button class="primary-btn full" type="submit" id="authSubmit">Continue</button>
+        </form>
+        <div class="or"><span></span> OR <span></span></div>
+        <button class="google-btn" id="googleLogin"><b>G</b> Continue with Google</button>
+        <p class="tiny muted">Demo interface only. Authentication will be connected in Phase 2.</p>
+      </div>
+      <button class="text-btn" id="guestBtn">Explore demo without signing in</button>
+    </section>
+
+    <main id="mainApp">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-icon">✦</div>
+          <div><strong>OMOR <span>AI</span></strong><small>Your AI companion</small></div>
+        </div>
+        <button class="avatar" id="profileShortcut" aria-label="Profile">OF</button>
+      </header>
+
+      <section class="page active" id="homePage">
+        <div class="greeting">
+          <p class="eyebrow">MONDAY • YOUR CREATIVE SPACE</p>
+          <h1>What can I help<br>you <span>create</span> today?</h1>
+          <p class="muted">Ask anything. Build something amazing.</p>
+        </div>
+        <button class="hero-card" data-open="chat">
+          <div class="hero-orb">✦</div>
+          <div><span class="pill">AI ASSISTANT</span><h2>Start a conversation</h2><p>Ideas, answers, coding and more.</p></div>
+          <span class="arrow">↗</span>
+        </button>
+        <div class="section-heading"><h2>Explore AI tools</h2><span class="muted">YOUR STUDIO</span></div>
+        <div class="tool-grid">
+          <button class="tool-card purple" data-open="image"><span class="tool-icon">▧</span><b>Image Studio</b><small>Create & edit images</small></button>
+          <button class="tool-card blue" data-open="writing"><span class="tool-icon">✎</span><b>AI Writer</b><small>Write anything</small></button>
+          <button class="tool-card teal" data-open="voice"><span class="tool-icon">◖</span><b>Voice Assistant</b><small>Talk with AI</small></button>
+          <button class="tool-card amber" data-open="coding"><span class="tool-icon">{ }</span><b>AI Coding</b><small>Build & fix code</small></button>
+        </div>
+        <div class="tip-card"><span>✧</span><div><b>Make your next idea real</b><p>Choose a tool above or ask OMOR AI anything.</p></div></div>
+      </section>
+
+      <section class="page" id="chatPage">
+        <div class="page-title"><div><p class="eyebrow">OMOR AI ASSISTANT</p><h1>AI Chat</h1></div><button class="icon-btn" id="newChat">＋</button></div>
+        <div class="chat-area" id="chatArea">
+          <div class="welcome-chat"><div class="big-spark">✦</div><h2>Hi! I'm OMOR AI.</h2><p class="muted">What would you like to know today?</p>
+            <div class="suggestions">
+              <button class="suggestion">Give me a creative idea</button>
+              <button class="suggestion">Explain HTML simply</button>
+              <button class="suggestion">Write a Bangla caption</button>
+            </div>
+          </div>
+        </div>
+        <form class="chat-composer" id="chatForm"><button type="button" class="attach-btn" title="Attach">＋</button><input id="chatInput" placeholder="Message OMOR AI..." autocomplete="off"><button class="send-btn" type="submit">↑</button></form>
+        <p class="tiny muted center">Demo responses only • AI connection comes later</p>
+      </section>
+
+      <section class="page" id="imagePage">
+        <div class="page-title"><div><p class="eyebrow">CREATIVE STUDIO</p><h1>Image Studio</h1></div><span class="pill">BETA</span></div>
+        <div class="feature-visual image-visual"><div class="visual-spark">✦</div><h2>Imagine it.<br><span>Bring it to life.</span></h2><p>Turn your words into visual ideas.</p></div>
+        <label class="field-label" for="imagePrompt">Describe your image</label>
+        <textarea id="imagePrompt" rows="4" placeholder="A cinematic portrait at golden hour, realistic photography..."></textarea>
+        <button class="primary-btn full" id="imageGenerate">✦ Generate image</button>
+        <div class="notice">Image generation requires an AI image provider. This screen is ready for API integration.</div>
+      </section>
+
+      <section class="page" id="writingPage">
+        <div class="page-title"><div><p class="eyebrow">WORDS THAT WORK</p><h1>AI Writer</h1></div></div>
+        <div class="writer-options">
+          <button class="writer-chip selected">Social caption</button><button class="writer-chip">Story</button><button class="writer-chip">Email</button><button class="writer-chip">Video script</button><button class="writer-chip">Translate</button>
+        </div>
+        <label class="field-label" for="writingPrompt">What should I write?</label>
+        <textarea id="writingPrompt" rows="5" placeholder="Tell me the topic, tone and language..."></textarea>
+        <button class="primary-btn full" id="writeBtn">✦ Create text</button>
+        <div class="output-card"><div class="output-head"><b>Your result</b><button class="text-btn" id="copyOutput">Copy</button></div><p id="writingOutput" class="muted">Your generated text will appear here.</p></div>
+      </section>
+
+      <section class="page" id="voicePage">
+        <div class="page-title"><div><p class="eyebrow">SPEAK NATURALLY</p><h1>Voice Assistant</h1></div></div>
+        <div class="voice-panel"><div class="voice-ring"><span>◖</span></div><h2>Talk to OMOR AI</h2><p class="muted">Voice features will be connected in a later release.</p><button class="primary-btn" id="voiceDemo">Try voice demo</button><p class="tiny muted" id="voiceStatus">Microphone access is not requested in this demo.</p></div>
+      </section>
+
+      <section class="page" id="codingPage">
+        <div class="page-title"><div><p class="eyebrow">BUILD WITH AI</p><h1>AI Coding</h1></div></div>
+        <div class="code-card"><span class="pill">CODE ASSISTANT</span><h2>From idea to code.</h2><p class="muted">Explain code, create components and troubleshoot errors.</p></div>
+        <label class="field-label" for="codePrompt">Describe what you want to build</label>
+        <textarea id="codePrompt" rows="4" placeholder="Create a responsive login page using HTML and CSS..."></textarea>
+        <button class="primary-btn full" id="codeBtn">✦ Ask coding assistant</button>
+        <div class="notice">Live code generation will be enabled after secure AI API setup.</div>
+      </section>
+
+      <section class="page" id="profilePage">
+        <div class="page-title"><div><p class="eyebrow">YOUR ACCOUNT</p><h1>Profile</h1></div></div>
+        <div class="profile-card"><div class="profile-avatar">OF</div><h2>Omor Faruk</h2><p class="muted">Guest account • Demo mode</p><button class="outline-btn" id="loginFromProfile">Sign in / Create account</button></div>
+        <div class="settings-list">
+          <div class="setting-row"><span>✦</span><div><b>App appearance</b><small>Dark theme</small></div><span class="muted">›</span></div>
+          <div class="setting-row"><span>◷</span><div><b>Chat history</b><small>Your recent conversations</small></div><span class="muted">›</span></div>
+          <div class="setting-row"><span>⚙</span><div><b>Settings</b><small>Preferences and privacy</small></div><span class="muted">›</span></div>
+          <div class="setting-row"><span>ⓘ</span><div><b>About OMOR AI</b><small>Version 1.0.0</small></div><span class="muted">›</span></div>
+        </div>
+        <p class="credit">Developed with care by <b>Omor Faruk</b></p>
+      </section>
+
+      <nav class="bottom-nav">
+        <button class="nav-item active" data-page="home"><span>⌂</span><small>Home</small></button>
+        <button class="nav-item" data-page="chat"><span>✧</span><small>AI Chat</small></button>
+        <button class="nav-item" data-page="image"><span>▧</span><small>Images</small></button>
+        <button class="nav-item" data-page="writing"><span>✎</span><small>Writer</small></button>
+        <button class="nav-item" data-page="profile"><span>○</span><small>Profile</small></button>
+      </nav>
+    </main>
+    <div id="toast" class="toast"></div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
